@@ -1,6 +1,9 @@
 //send emial using nodemailer
 //import module what is required for send an email
 const nodemailer = require("nodemailer");
+const path = require("path");
+const dotenv = require("dotenv");
+dotenv.config({ path: "../.env.dev" });
 
 //create function to do an action
 const sendEmail = async () => {
@@ -9,7 +12,7 @@ const sendEmail = async () => {
     service: "gmail",
     auth: {
       user: "kumarsambit678@gmail.com",
-      pass: "wfpiqbdmounurvfc",
+      pass: process.env.PASSWORD,
     },
   });
 
